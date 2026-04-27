@@ -8,6 +8,7 @@ plugins {
 group = "org.ajoberstar"
 description = "Git plugins for Gradle."
 
+// This third-party extension is dynamically typed, so Groovy interop is required in Kotlin DSL.
 configure<Any>("defaults") {
     withGroovyBuilder {
         setProperty("id", "ajoberstar")
@@ -28,7 +29,9 @@ configure<Any>("defaults") {
     }
 }
 
-java.sourceCompatibility = JavaVersion.VERSION_1_7
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+}
 
 configurations {
     all {
