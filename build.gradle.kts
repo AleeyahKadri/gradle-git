@@ -37,22 +37,22 @@ repositories {
 
 dependencies {
     // groovy
-    compile(localGroovy())
+    implementation(localGroovy())
 
     // gradle api
-    compile(gradleApi())
+    implementation(gradleApi())
 
     // grgit
-    compile("org.ajoberstar:grgit:1.9.3")
+    implementation("org.ajoberstar:grgit:1.9.3")
 
     // semver
-    compile("com.github.zafarkhaja:java-semver:0.9.0")
+    implementation("com.github.zafarkhaja:java-semver:0.9.0")
 
     // testing
-    testCompile("org.spockframework:spock-core:1.0-groovy-2.3")
-    testRuntime("cglib:cglib-nodep:3.1")
+    testImplementation("org.spockframework:spock-core:1.0-groovy-2.3")
+    testRuntimeOnly("cglib:cglib-nodep:3.1")
 }
 
 tasks.wrapper {
-    gradleVersion = "2.1"
+    gradleVersion = "6.9.4"
 }
